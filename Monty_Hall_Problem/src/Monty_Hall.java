@@ -64,7 +64,7 @@ public class Monty_Hall {
         System.out.println("Number of iterations: " + n);
         System.out.println("Percentage right while staying: " + stay_stat / n);
         System.out.println("Percentage right while moving: " + move_stat / n);
-        System.out.println("While n approaches infinity percentage is 1/3 if you stay and 2/3 if you move. Math is cool!");
+        System.out.println("While n approaches infinity percentage is ~1/3 if you stay and ~2/3 if you move. Math is cool!");
         System.out.println("───────────▄▄▄▄▄▄▄▄▄───────────\n" +
                 "────────▄█████████████▄────────\n" +
                 "█████──█████████████████──█████\n" +
