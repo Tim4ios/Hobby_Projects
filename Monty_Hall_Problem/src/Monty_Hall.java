@@ -72,7 +72,7 @@ public class Monty_Hall {
                         }
                         break;
                     default:
-                        System.out.println("Something went wring when calculating!");
+                        System.out.println("Something went wrong when calculating!");
                         break;
                 }
             }
