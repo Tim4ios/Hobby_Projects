@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 /*
@@ -34,7 +33,7 @@ public class Monty_Hall {
             /* Since the host has removed one of the doors you only have 2 options left and if you stayed and
                where right stay_stat goes up otherwise move_stat does
              */
-            switch (door_picked){
+            switch (door_picked) {
                 case 0:
                     if (doors.A) {
                         stay_stat++;
@@ -62,10 +61,10 @@ public class Monty_Hall {
             }
         }
 
-        System.out.println("Number of iterations: "+n);
-        System.out.println("Percentage right while staying: "+stay_stat/n);
-        System.out.println("Percentage right while moving: "+move_stat/n);
-        System.out.println("While n approach infinity it should be 1/3 if you stay and 2/3 if you move. Math is cool :)");
+        System.out.println("Number of iterations: " + n);
+        System.out.println("Percentage right while staying: " + stay_stat / n);
+        System.out.println("Percentage right while moving: " + move_stat / n);
+        System.out.println("While n approaches infinity percentage is 1/3 if you stay and 2/3 if you move. Math is cool!");
         System.out.println("───────────▄▄▄▄▄▄▄▄▄───────────\n" +
                 "────────▄█████████████▄────────\n" +
                 "█████──█████████████████──█████\n" +
