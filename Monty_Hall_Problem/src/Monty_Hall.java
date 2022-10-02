@@ -30,7 +30,10 @@ public class Monty_Hall {
 
             int n = scanner.nextInt();
             while (n < 1) {
-                if (!scanner.hasNextInt()) continue;
+                while(!scanner.hasNextInt()){
+                    System.out.println("That's not a number!");
+                    scanner.next(); // this is important!
+                }
                 System.out.println("You need to enter a number that is bigger than 0!");
                 n = scanner.nextInt();
             }
