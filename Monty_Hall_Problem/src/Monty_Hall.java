@@ -1,4 +1,3 @@
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 /*
@@ -14,7 +13,8 @@ public class Monty_Hall {
         double move_stat = 0;
         Random random = new Random();
         int door_picked;
-        System.out.println("Monty Hall asks you to choose one of three doors.\nOne of the doors hides a prize and the other two doors have no prize.\nYou state out loud which door you pick, but you don’t open it right away." +
+        System.out.println("Monty Hall asks you to choose one of three doors.\nOne of the doors hides a prize and the other two doors have no prize." +
+                "\nYou state out loud which door you pick, but you don’t open it right away." +
                 "\n" +
                 "Monty opens one of the other two doors, and there is no prize behind it." +
                 "\n" +
@@ -30,81 +30,82 @@ public class Monty_Hall {
 
             int n = scanner.nextInt();
             while (n < 1) {
-                if(!scanner.hasNextInt())continue;
+                if (!scanner.hasNextInt()) continue;
                 System.out.println("You need to enter a number that is bigger than 0!");
                 n = scanner.nextInt();
             }
 
 
-        for (int i = 0; i < n; i++) {
-            Door_Generator doors = new Door_Generator();
+            for (int i = 0; i < n; i++) {
+                Door_Generator doors = new Door_Generator();
 
-            //The door the contestant chooses
-            door_picked = random.nextInt(3);
+                //The door the contestant chooses
+                door_picked = random.nextInt(3);
 
 
             /* Since the host has removed one of the doors you only have 2 options left and if you stayed and
                where right stay_stat goes up otherwise move_stat does
              */
-            switch (door_picked) {
-                case 0:
-                    if (doors.A) {
-                        stay_stat++;
-                    } else {
-                        move_stat++;
-                    }
-                    break;
-                case 1:
-                    if (doors.B) {
-                        stay_stat++;
-                    } else {
-                        move_stat++;
-                    }
-                    break;
-                case 2:
-                    if (doors.C) {
-                        stay_stat++;
-                    } else {
-                        move_stat++;
-                    }
-                    break;
-                default:
-                    System.out.println("Something went wring when calculating!");
-                    break;
+                switch (door_picked) {
+                    case 0:
+                        if (doors.A) {
+                            stay_stat++;
+                        } else {
+                            move_stat++;
+                        }
+                        break;
+                    case 1:
+                        if (doors.B) {
+                            stay_stat++;
+                        } else {
+                            move_stat++;
+                        }
+                        break;
+                    case 2:
+                        if (doors.C) {
+                            stay_stat++;
+                        } else {
+                            move_stat++;
+                        }
+                        break;
+                    default:
+                        System.out.println("Something went wring when calculating!");
+                        break;
+                }
             }
-        }
 
-        System.out.println("Number of iterations: " + n);
-        System.out.println("Percentage right while staying: " + stay_stat / n);
-        System.out.println("Percentage right while moving: " + move_stat / n);
-        System.out.println("While n approaches infinity percentage is ~1/3 if you stay and ~2/3 if you move. Math is cool!");
-        System.out.println("───────────▄▄▄▄▄▄▄▄▄───────────\n" +
-                "────────▄█████████████▄────────\n" +
-                "█████──█████████████████──█████\n" +
-                "▐████▌─▀███▄───────▄███▀─▐████▌\n" +
-                "─█████▄──▀███▄───▄███▀──▄█████─\n" +
-                "─▐██▀███▄──▀███▄███▀──▄███▀██▌─\n" +
-                "──███▄▀███▄──▀███▀──▄███▀▄███──\n" +
-                "──▐█▄▀█▄▀███─▄─▀─▄─███▀▄█▀▄█▌──\n" +
-                "───███▄▀█▄██─██▄██─██▄█▀▄███───\n" +
-                "────▀███▄▀██─█████─██▀▄███▀────\n" +
-                "───█▄─▀█████─█████─█████▀─▄█───\n" +
-                "───███────────███────────███───\n" +
-                "───███▄────▄█─███─█▄────▄███───\n" +
-                "───█████─▄███─███─███▄─█████───\n" +
-                "───█████─████─███─████─█████───\n" +
-                "───█████─████─███─████─█████───\n" +
-                "───█████─████─███─████─█████───\n" +
-                "───█████─████▄▄▄▄▄████─█████───\n" +
-                "────▀███─█████████████─███▀────\n" +
-                "──────▀█─███─▄▄▄▄▄─███─█▀──────\n" +
-                "─────────▀█▌▐█████▌▐█▀─────────\n" +
-                "────────────███████────────────");
+            System.out.println("Number of iterations: " + n);
+            System.out.println("Percentage right while staying: " + stay_stat / n);
+            System.out.println("Percentage right while moving: " + move_stat / n);
+            System.out.println("While n approaches infinity percentage is ~1/3 if you stay and ~2/3 if you move. Math is cool!");
+            System.out.println("" +
+                    "───────────▄▄▄▄▄▄▄▄▄───────────\n" +
+                    "────────▄█████████████▄────────\n" +
+                    "█████──█████████████████──█████\n" +
+                    "▐████▌─▀███▄───────▄███▀─▐████▌\n" +
+                    "─█████▄──▀███▄───▄███▀──▄█████─\n" +
+                    "─▐██▀███▄──▀███▄███▀──▄███▀██▌─\n" +
+                    "──███▄▀███▄──▀███▀──▄███▀▄███──\n" +
+                    "──▐█▄▀█▄▀███─▄─▀─▄─███▀▄█▀▄█▌──\n" +
+                    "───███▄▀█▄██─██▄██─██▄█▀▄███───\n" +
+                    "────▀███▄▀██─█████─██▀▄███▀────\n" +
+                    "───█▄─▀█████─█████─█████▀─▄█───\n" +
+                    "───███────────███────────███───\n" +
+                    "───███▄────▄█─███─█▄────▄███───\n" +
+                    "───█████─▄███─███─███▄─█████───\n" +
+                    "───█████─████─███─████─█████───\n" +
+                    "───█████─████─███─████─█████───\n" +
+                    "───█████─████─███─████─█████───\n" +
+                    "───█████─████▄▄▄▄▄████─█████───\n" +
+                    "────▀███─█████████████─███▀────\n" +
+                    "──────▀█─███─▄▄▄▄▄─███─█▀──────\n" +
+                    "─────────▀█▌▐█████▌▐█▀─────────\n" +
+                    "────────────███████────────────");
 
 
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Why are you stress testing my code?");
         }
-        }
+    }
 
 }
