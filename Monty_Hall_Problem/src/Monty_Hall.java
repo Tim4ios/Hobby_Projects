@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 /*
@@ -21,7 +22,19 @@ public class Monty_Hall {
                 "At this moment, there are two closed doors, one of which you picked.\nShould you switch or move?\n");
         System.out.println("How many iterations do you want to run?");
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+        try {
+            while (!scanner.hasNextInt()) {
+                System.out.println("That's not a number!");
+                scanner.next(); // this is important!
+            }
+
+            int n = scanner.nextInt();
+            while (n < 1) {
+                if(!scanner.hasNextInt())continue;
+                System.out.println("You need to enter a number that is bigger than 0!");
+                n = scanner.nextInt();
+            }
+
 
         for (int i = 0; i < n; i++) {
             Door_Generator doors = new Door_Generator();
@@ -88,5 +101,10 @@ public class Monty_Hall {
                 "─────────▀█▌▐█████▌▐█▀─────────\n" +
                 "────────────███████────────────");
 
-    }
+
+        }catch(Exception e){
+            System.out.println("Why are you stress testing my code?");
+        }
+        }
+
 }
